@@ -14,13 +14,13 @@ public class OrderLifecycleController {
         this.service = service;
     }
 
-    // Create a new order
+
     @PostMapping("/{orderId}")
     public OrderLifecycleDocument createOrder(@PathVariable String orderId) {
         return service.createOrder(orderId);
     }
 
-    // Add event to order
+    
     @PostMapping("/{orderId}/events/{eventType}")
     public OrderLifecycleDocument addEvent(
             @PathVariable String orderId,
@@ -28,7 +28,7 @@ public class OrderLifecycleController {
         return service.addEvent(orderId, eventType);
     }
 
-    // Get order lifecycle
+    
     @GetMapping("/{orderId}")
     public OrderLifecycleDocument getOrder(@PathVariable String orderId) {
         return service.getOrder(orderId);
